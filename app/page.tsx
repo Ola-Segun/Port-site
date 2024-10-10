@@ -686,7 +686,7 @@ export default function Portfolio() {
                   setCursorText("");
                 }}
               >
-                <Image
+                <img
                   src={project.images[0]}
                   alt={project.title}
                   className="w-full h-60 object-cover"
@@ -785,7 +785,7 @@ export default function Portfolio() {
               />
               <div className="relative z-10">
                 <div className="relative grid">
-                  <Image
+                  <img
                     src={selectedProject.images[currentImageIndex]}
                     alt={`${selectedProject.title} screenshot ${
                       currentImageIndex + 1
@@ -995,7 +995,7 @@ export default function Portfolio() {
                     {testimonial.text}
                   </p>
                   <div className="flex items-center">
-                    <Image
+                    <img
                       src={testimonial.image}
                       alt={testimonial.name}
                       className="w-12 h-12 rounded-full mr-4"
