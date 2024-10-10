@@ -216,7 +216,7 @@ export default function Portfolio() {
   const [currentTestimonialPage, setCurrentTestimonialPage] = useState(1);
   const { scrollYProgress } = useScroll();
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const headerRef = useRef(null);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   const projectsPerPage = 6;
   const testimonialsPerPage = 6;
@@ -256,8 +256,9 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (headerRef.current) {
-        const headerBottom = headerRef.current.getBoundingClientRect().bottom;
+      const header = headerRef.current;
+      if (header) {
+        const headerBottom = header.getBoundingClientRect().bottom;
         setShowNav(headerBottom < 0);
       }
     };
@@ -669,7 +670,7 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale:1.02 }}
                 onClick={() => {
                   setSelectedProject(project);
                   setCurrentImageIndex(0);
