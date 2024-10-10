@@ -95,42 +95,6 @@ const projects = [
     demoLink: "https://demo4.example.com",
     githubLink: "https://github.com/example/project4",
   },
-  {
-    title: "Project 5",
-    description: "A brief description of Project 5",
-    images: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-    languages: ["Angular", "NestJS", "MongoDB"],
-    demoLink: "https://demo5.example.com",
-    githubLink: "https://github.com/example/project5",
-  },
-  {
-    title: "Project 6",
-    description: "A brief description of Project 6",
-    images: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-    languages: ["Svelte", "Sapper", "PostgreSQL"],
-    demoLink: "https://demo6.example.com",
-    githubLink: "https://github.com/example/project6",
-  },
-  {
-    title: "Project 7",
-    description: "A brief description of Project 7",
-    images: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-    languages: ["Next.js", "Tailwind CSS", "Prisma"],
-    demoLink: "https://demo7.example.com",
-    githubLink: "https://github.com/example/project7",
-  },
 ];
 
 const experiences = [
@@ -227,8 +191,8 @@ export default function Portfolio() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const headerRef = useRef<HTMLDivElement>(null);
 
-  const projectsPerPage = 6;
-  const testimonialsPerPage = 6;
+  const projectsPerPage = 3;
+  const testimonialsPerPage = 3;
 
   useEffect(() => {
     const mouseMove = (e: MouseEvent) => {
