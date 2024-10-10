@@ -33,6 +33,15 @@ const jobTitles = [
   "Full Stack Developer",
 ];
 
+interface Project {
+  title: string;
+  description: string;
+  images: string[];
+  languages: string[];
+  demoLink: string;
+  githubLink: string;
+}
+
 const projects = [
   {
     title: "Invetory POS",
@@ -210,8 +219,7 @@ export default function Portfolio() {
   const [currentJobTitle, setCurrentJobTitle] = useState("");
   const [showNav, setShowNav] = useState(false);
   const [navOpen, setNavOpen] = useState(true);
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentProjectPage, setCurrentProjectPage] = useState(1);
   const [currentTestimonialPage, setCurrentTestimonialPage] = useState(1);
   const { scrollYProgress } = useScroll();
@@ -1096,13 +1104,7 @@ export default function Portfolio() {
             </div>
             <div className="md:w-1/2" style={{zIndex:1}}>
               <form>
-                <div 
-                  className="flex mb-4"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay:0.2 }}
-                  viewport={{ once: true }}
-                >
+                <div>
                   <motion.input
                     type="text"
                     placeholder="Name"
