@@ -1105,7 +1105,7 @@ export default function Portfolio() {
             </div>
             <div className="md:w-1/2" style={{zIndex:1}}>
               <form>
-                <div>
+                <div className="flex mb-2">
                   <motion.input
                     type="text"
                     placeholder="Name"
