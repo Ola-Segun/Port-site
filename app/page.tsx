@@ -6,6 +6,7 @@ import {
   useScroll,
   useTransform,
   AnimatePresence,
+  Variants,
 } from "framer-motion";
 import {
   SunIcon,
@@ -275,7 +276,7 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const variants = {
+  const variants: Variants = {
     default: {
       x: mousePosition.x - 40,
       y: mousePosition.y - 40,
@@ -288,7 +289,7 @@ export default function Portfolio() {
       x: mousePosition.x - 80,
       y: mousePosition.y - 80,
       backgroundColor: "white",
-      mixBlendMode: "difference",
+      mixBlendMode: "difference" as const,
     },
   };
 
